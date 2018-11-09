@@ -15,7 +15,6 @@ build_script:
 test: off
 deploy: off
 artifacts:
-   - path: '**\out\*.nupkg'
    - path: '**\*.zip'
 shallow_clone: true
 clone_depth: 1
