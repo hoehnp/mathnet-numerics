@@ -14,5 +14,7 @@ build_script:
    - build.cmd Test quick
 test: off
 deploy: off
+artifacts:
+   - path: '**\*.nupkg'
 shallow_clone: true
 clone_depth: 1
