@@ -230,25 +230,25 @@ namespace MathNet.Numerics.LinearAlgebra
 	    var storage = this.Storage;
             if (storage is DenseColumnMajorMatrixStorage<T>)
 	    {
-	        var result = MatrixBuilder.Dense(this.RowCount, this.ColumnCount);
+	        var result = Build.Dense(this.RowCount, this.ColumnCount);
                 Storage.CopyToUnchecked(result.Storage, ExistingData.AssumeZeros);
                 return result;
             }
             else if (storage is DiagonalMatrixStorage<T>)
 	    {
-	        var result = fullyMutable ? MatrixBuilder.Sparse(this.RowCount, this.ColumnCount) : MatrixBuilder.Diagonal(this.RowCount, this.ColumnCount);
+	        var result = fullyMutable ? Build.Sparse(this.RowCount, this.ColumnCount) : Build.Diagonal(this.RowCount, this.ColumnCount);
                 Storage.CopyToUnchecked(result.Storage, ExistingData.AssumeZeros);
                 return result;
             }
 	    else if (storage is SparseCompressedRowMatrixStorage<T>) 
 	    {
-	        var result = MatrixBuilder.Sparse(this.RowCount, this.ColumnCount);
+	        var result = Build.Sparse(this.RowCount, this.ColumnCount);
                 Storage.CopyToUnchecked(result.Storage, ExistingData.AssumeZeros);
                 return result;
 	    }
 	    else
 	    {
-                var result = MatrixBuilder.Dense(this.RowCount, this.ColumnCount);
+                var result = Build.Dense(this.RowCount, this.ColumnCount);
                 Storage.CopyToUnchecked(result.Storage, ExistingData.AssumeZeros);
                 return result;
 	    }
