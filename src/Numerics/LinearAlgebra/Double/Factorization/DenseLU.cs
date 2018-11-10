@@ -73,7 +73,10 @@ namespace MathNet.Numerics.LinearAlgebra.Double.Factorization
             {
                 for (var j = 0; j < factors.ColumnCount; j++)
                 {
-                    Assert.AreEqual(factors[i, j], matrix[i, j]);
+                    if (factors[i, j] != matrix[i, j])
+		    {
+                	throw new ArgumentNullException(nameof(matrix));
+		    }
                 }
             }
             LinearAlgebraControl.Provider.LUFactor(factors.Values, matrix.RowCount, pivots);
