@@ -227,7 +227,7 @@ namespace MathNet.Numerics.LinearAlgebra
         /// </returns>
         public Matrix<T> Clone()
         {
-            var result = Build.SameAs(this);
+            var result = Build.SameAs(this, this.RowCount, this.ColumnCount);
             Storage.CopyToUnchecked(result.Storage, ExistingData.AssumeZeros);
             return result;
         }
