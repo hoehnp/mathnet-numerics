@@ -66,7 +66,7 @@ namespace MathNet.Numerics.LinearAlgebra.Double.Factorization
             var pivots = new int[matrix.RowCount];
 
             // Create a new matrix for the LU factors, then perform factorization (while overwriting).
-            var factors = (DenseMatrix) matrix.Clone();
+            var factors = matrix.Clone() as DenseMatrix;
             LinearAlgebraControl.Provider.LUFactor(factors.Values, factors.RowCount, pivots);
 
             return new DenseLU(factors, pivots);
