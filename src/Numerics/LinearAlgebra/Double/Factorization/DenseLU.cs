@@ -30,6 +30,7 @@
 using System;
 using MathNet.Numerics.Properties;
 using MathNet.Numerics.Providers.LinearAlgebra;
+using NUnit.Framework;
 
 namespace MathNet.Numerics.LinearAlgebra.Double.Factorization
 {
