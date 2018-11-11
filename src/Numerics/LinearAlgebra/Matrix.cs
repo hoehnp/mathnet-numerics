@@ -236,7 +236,7 @@ namespace MathNet.Numerics.LinearAlgebra
             }
             else if (storage is DiagonalMatrixStorage<T>)
 	    {
-	        var result = this.fullyMutable ? Build.Sparse(this.RowCount, this.ColumnCount) : Build.Diagonal(this.RowCount, this.ColumnCount);
+	        var result = Build.Diagonal(this.RowCount, this.ColumnCount);
                 Storage.CopyToUnchecked(result.Storage, ExistingData.AssumeZeros);
                 return result;
             }
